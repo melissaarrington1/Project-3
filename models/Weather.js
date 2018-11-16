@@ -1,9 +1,9 @@
-const mongoose = require('../db/connection')
+const mongoose = require('../db/connections')
 const Schema = mongoose.Schema
 
-const WeatherSchema = new Schema ({
+const Weather = new Schema ({
     typeOfWeather: String,
-    date: Date.now
+    // date: Date.now
 })
 
 module.exports = mongoose.model('Weather', Weather)
