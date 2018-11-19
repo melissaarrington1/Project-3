@@ -24,7 +24,7 @@ class UserPage extends Component {
   render() {
     return (
       <div>
-        <h1>UserPage</h1>
+        <h1>New User Page</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Name: </label>
           <input
