@@ -8,7 +8,7 @@ router.get('/api/users', userController.index)
 router.post('/api/users/', userController.create)
 router.get('/api/users/:userId', userController.show)
 router.patch('/api/users/:userId', userController.update)
-router.delete('/api/users/:userId', userContoller.delete)
+router.delete('/api/users/:userId', userController.delete)
 
 //Routes for City Model
 router.get('/api/users/city', cityController.index)
