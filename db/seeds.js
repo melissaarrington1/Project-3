@@ -7,8 +7,8 @@ const mongoose = require('../db/connections')
 const city = new City ({
     city: 'Atlanta',
     state: 'Georgia',
-    currentTemp: '50 degrees',
-    weather: 'Sunny and Mild'
+    currentTemp: 50,
+    // weather: [Sunny, Mild]
 })
 
 //User Model 
@@ -19,5 +19,7 @@ const user = new User({
 
 User.remove({})
   .then(() => user.save())
+  .then(()=>City.remove({}))
+  .then(() => city.save())
   .then(() => console.log('Successful Save'))
   .then(() => mongoose.connection.close())

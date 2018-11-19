@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Button from '@material-ui/core/Button';
+
 
 class UserPage extends Component {
   state = {
@@ -22,6 +24,7 @@ class UserPage extends Component {
   };
 
   render() {
+      
     return (
       <div>
         <h1>New User Page</h1>
@@ -41,7 +44,7 @@ class UserPage extends Component {
             onChange={this.handleChange}
           />
 
-          <input type="submit" value="Submit" />
+          <Button type="submit" value="Submit" variant="contained" color="primary">Create User</Button>
         </form>
       </div>
     );

@@ -11,7 +11,7 @@ router.patch('/api/users/:userId', userController.update)
 router.delete('/api/users/:userId', userController.delete)
 
 //Routes for City Model
-router.get('/api/users/city', cityController.index)
+router.get('/api/city', cityController.index)
 
 //Routes for Weather Model
 
