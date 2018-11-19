@@ -26,8 +26,14 @@ const userController = {
             updatedUser.save()
             res.send(updatedUser)
         })
+    },
+    delete: (req, res) => {
+        User.findByIdAndDelete(req.params.userId)
+            .then(() => {
+                res.send(200)
+            })
     }
-    }
+}
 
 
 module.exports = userController
