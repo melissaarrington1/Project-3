@@ -19,7 +19,7 @@ class UserPage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     axios.post("/api/users", this.state.newUser).then(res => {
-      this.props.history.push(`/users/${res.data._id}`);
+      this.props.history.push(`/api/users/${res.data._id}`);
     });
   };
 
