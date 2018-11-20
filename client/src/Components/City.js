@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 class City extends Component {
     state = {
@@ -20,12 +21,12 @@ class City extends Component {
     render() {
         return (
             <div>
-                {/* {this.state.city.map(city => (
+                {this.state.city.map(city => (
           <div key={user._id}>
           <Link to={`/users/${user._id}`}>{user.name}</Link>
           </div>
         ))}
-                {this.state.city.name} */}
+                {this.state.city.name}
             </div>
         );
     }

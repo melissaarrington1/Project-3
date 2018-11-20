@@ -63,7 +63,7 @@ class UserWeatherPage extends Component {
         <City {...this.props} />
         {/* {this.state.city.city} */}
         {/* <button onClick={this.onDelete.bind(this)}>Delete User</button> */}
-        <UserPage/>
+        {/* <City /> */}
         <form onSubmit={this.props.getWeather}>
           <input type="text" name="city" placeholder="city"/>
           <input type="text" nanem="country" placeholder="country"/>
