@@ -5,7 +5,7 @@ const Navigation = () => {
   return (
   <div>
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/api/users">User</NavLink>
+      <NavLink to="/users">User</NavLink>
       </div>
   );
 };

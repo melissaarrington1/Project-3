@@ -1,7 +1,7 @@
 const User = require('../models/User')
 const City = require('../models/City')
 const Weather = require('../models/Weather')
-const mongoose = require('../db/connections')
+const mongoose = require('./connections')
 
 //City Model
 const city = new City ({
@@ -14,12 +14,14 @@ const city = new City ({
 //User Model 
 const user = new User({
     name: 'Melissa',
-    email: 'melissa@yahoo.com'
+    email: 'melissa@yahoo.com',
+    favCity: [city]
 })
 
 User.remove({})
-  .then(() => user.save())
-  .then(()=>City.remove({}))
-  .then(() => city.save())
+.then(() =>  City.remove({})) 
+.then(() => City.insertMany([city]))
+.then(() => user.save())
+//   .then(() => city.save())
   .then(() => console.log('Successful Save'))
   .then(() => mongoose.connection.close())
