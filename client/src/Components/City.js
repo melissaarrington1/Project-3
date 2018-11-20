@@ -22,11 +22,11 @@ class City extends Component {
         return (
             <div>
                 {this.state.city.map(city => (
-          <div key={user._id}>
-          <Link to={`/users/${user._id}`}>{user.name}</Link>
+          <div key={city._id}>
+          <Link to={`/users/${city._id}`}>{city.city}</Link>
           </div>
         ))}
-                {this.state.city.name}
+                {/* {this.state.city.city} */}
             </div>
         );
     }

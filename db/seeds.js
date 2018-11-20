@@ -15,7 +15,9 @@ const city = new City ({
 const user = new User({
     name: 'Melissa',
     email: 'melissa@yahoo.com',
-    favCity: [city]
+    favCity: [
+        city
+    ]
 })
 
 User.remove({})

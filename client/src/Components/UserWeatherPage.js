@@ -25,6 +25,12 @@ class UserWeatherPage extends Component {
     city: {}
   };
 
+  getAllCites = () => {
+    axios.get("/api/users/:userId").then(res => {
+      this.setState({ user: res.data });
+    });
+  };
+
   componentDidMount() {
     const userId = this.props.match.params.userId;
     axios.get(`/api/users/${userId}`).then(res => {
@@ -60,10 +66,10 @@ class UserWeatherPage extends Component {
         <h1>Welcome {this.state.user.name}</h1>
         <h1>View Your Local Weather Below:</h1>
         <h1>Select A City</h1>
-        <City {...this.props} />
+        {/* <City {...this.props} /> */}
         {/* {this.state.city.city} */}
         {/* <button onClick={this.onDelete.bind(this)}>Delete User</button> */}
-        {/* <City /> */}
+        <City match={this.props.match}/>
         <form onSubmit={this.props.getWeather}>
           <input type="text" name="city" placeholder="city"/>
           <input type="text" nanem="country" placeholder="country"/>
