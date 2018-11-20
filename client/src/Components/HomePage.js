@@ -2,13 +2,18 @@ import React, { Component } from 'react'
 import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom'
 import styled from 'styled-components';
+import weatherPic from '../Images/weatherGIF.gif'
 
-
-const Title = styled.h1`
+const Title = styled.div`
+height: 1000px;
   font-size: 1.5em;
   text-align: center;
   color: white;
+//background-image: url(${weatherPic});
+//background-repeat: no-repeat;
+  
 `
+
 class HomePage extends Component {
     render() {
         return(

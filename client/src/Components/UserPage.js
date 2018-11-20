@@ -2,7 +2,17 @@ import React, { Component } from "react";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
 import {Link} from 'react-router-dom'
+import styled from 'styled-components';
 
+
+
+const Title = styled.div`
+  
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+
+`
 class UserPage extends Component {
   state = {
     user: [],
@@ -37,6 +47,7 @@ class UserPage extends Component {
   render() {
     return (
       <div>
+        { /* This shows a list of All Users */ }
         {this.state.user.map(user => (
           <div key={user._id}>
           <Link to={`/users/${user._id}`}>{user.name}</Link>

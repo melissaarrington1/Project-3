@@ -5,4 +5,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: rgb(152, 215, 245);
+  background-image: url(./Images/weatherGIF.gif);
+  background-size: cover;
 }
+

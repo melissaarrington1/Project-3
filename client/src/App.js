@@ -41,7 +41,7 @@ class App extends Component {
     return (
       <Router>
       <div>
-        <Navigation />
+        
         <Switch>
         <Route exact path="/users" component={UserPage} />
         <Route exact path="/users/:userId" component={UserWeatherPage} getWeather={this.getWeather}/>
