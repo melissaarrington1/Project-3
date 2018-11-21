@@ -9,7 +9,7 @@ import Navigation from '../Components/Navigation'
 
 
 const Title = styled.div`
-  font-size: 1.5em;
+  font-size: 20px;
   text-align: center;
   color: white;
 `
@@ -26,7 +26,8 @@ class UserWeatherPage extends Component {
   };
 
   getAllCites = () => {
-    axios.get("/api/users/:userId").then(res => {
+    const userId = this.props.match.params.userId;
+    axios.get(`/api/users/${userId}`).then(res => {
       this.setState({ user: res.data });
     });
   };
@@ -63,9 +64,10 @@ class UserWeatherPage extends Component {
     return (
       <Title>
           <Navigation />
+          {console.log(this.state.user)}
         <h1>Welcome {this.state.user.name}</h1>
         <h1>View Your Local Weather Below:</h1>
-        <h1>Select A City</h1>
+        <h1>Select A City  </h1>
         {/* <City {...this.props} /> */}
         {/* {this.state.city.city} */}
         {/* <button onClick={this.onDelete.bind(this)}>Delete User</button> */}
@@ -78,6 +80,8 @@ class UserWeatherPage extends Component {
         <Button onClick={this.handleDelete} variant="contained" color="primary">
           <Link to="/api/users/:userId">Delete Your Account</Link>
         </Button>
+
+        
       </Title>
     );
   }

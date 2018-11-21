@@ -16,7 +16,7 @@ const user = new User({
     name: 'Melissa',
     email: 'melissa@yahoo.com',
     favCity: [
-        city
+        Atlanta
     ]
 })
 

@@ -6,6 +6,7 @@ import HomePage from './Components/HomePage'
 import UserPage from './Components/UserPage'
 import Navigation from './Components/Navigation'
 import UserWeatherPage from './Components/UserWeatherPage';
+import UpdateUser from './Components/UpdateUser'
 import Weather from './Components/Weather'
 import Form from './Components/Form'
 
@@ -44,6 +45,7 @@ class App extends Component {
         <Switch>
         <Route exact path="/users" component={UserPage} />
         <Route exact path="/users/:userId" component={UserWeatherPage} getWeather={this.getWeather}/>
+        <Route path='/users/:userId' component={UpdateUser} />
         <Route path="/" component={HomePage}/>
         </Switch>
       </div>
