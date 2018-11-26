@@ -9,3 +9,7 @@ body {
   background-size: cover;
 }
 
+#image {
+  height: 340px;
+  width: 340px;
+}
