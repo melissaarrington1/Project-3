@@ -46,8 +46,8 @@ class UserPage extends Component {
 
   render() {
     return (
-      <div>
-        { /* This shows a list of All Users */ }
+      <Title>
+        <h1>View All Users</h1>
         {this.state.user.map(user => (
           <div key={user._id}>
           <Link to={`/users/${user._id}`}>{user.name}</Link>
@@ -90,7 +90,7 @@ class UserPage extends Component {
             Create User
           </Button>
         </form>
-      </div>
+      </Title>
     );
   }
 }

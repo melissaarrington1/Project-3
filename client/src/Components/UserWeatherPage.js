@@ -6,7 +6,6 @@ import UserPage from "../Components/UserPage";
 import City from "./City";
 import styled from 'styled-components';
 import Navigation from '../Components/Navigation'
-import Weather from './Weather'
 
 
 const Title = styled.div`
@@ -15,20 +14,15 @@ const Title = styled.div`
   color: white;
 `
 class UserWeatherPage extends Component {
-    handleWeather = (e) => {
-        e.preventDefault()
-        console.log(this.props.getWeather)
-    }
-  // state = {
-  //     city: '',
-  //     state: '',
-  //     currentTemp: ''
-  // };
-
-  state = {
-    user: {},
-    city: {}
-  };
+    
+    state = {
+      user: [],
+      newUser: {
+        name: "",
+        email: "",
+        city: ""
+      }
+    };
 
   getAllCites = () => {
     const userId = this.props.match.params.userId;
@@ -40,11 +34,26 @@ class UserWeatherPage extends Component {
   componentDidMount() {
     const userId = this.props.match.params.userId;
     axios.get(`/api/users/${userId}`).then(res => {
-      this.setState({
-        user: res.data,
-        city: res.data.city
-      });
-    });
+      console.log(res.data)
+      this.setState({ user: res.data })
+    })
+  }
+
+  handleChange = event => {
+    const updatedUser = { ...this.state.newUser }
+
+    updatedUser[event.target.name] = event.target.value
+    this.setState({ newUser: updatedUser })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const userId = this.props.match.params.userId
+    axios.patch(`/api/users/${userId}`, this.state.newUser)
+    .then(res => {
+      this.props.history.push(`/users/${res.data._id}`)
+    })
   }
 
   handleDelete = () => {
@@ -52,17 +61,6 @@ class UserWeatherPage extends Component {
       this.props.history.push("/users");
     });
   };
-
-  // onDelete() {
-  //     let userId = this.state.userId;
-  //     axios.delete(`http://localhost:3000/api/users/${userId}`)
-  //       .then(response => {
-  //         this.props.history.push("/");
-  //       })
-  //       .catch(err => console.log(err));
-  //   }
-
-
 
 
   render() {
@@ -72,25 +70,45 @@ class UserWeatherPage extends Component {
           {console.log(this.state.user)}
         <h1>Welcome {this.state.user.name}</h1>
         <h1>View Your Local Weather Below:</h1>
-        <h1>Select A City </h1>
-        {/* <City {...this.props} /> */}
-        {/* {this.state.city.city} */}
-        {/* <button onClick={this.onDelete.bind(this)}>Delete User</button> */}
+        <h1>Your Current Selected City Is: {this.state.user.city} </h1>
+        
         <City match={this.props.match}/>
         <img id="image" src="https://media-cdn.tripadvisor.com/media/photo-s/03/9b/2f/35/atlanta.jpg" alt="atlanta" />
-        <Weather 
-        temperature={this.state.temperature} 
-        city={this.state.city}
-        country={this.state.country}
-        description={this.state.description}
         
-        />
-        
-        <form onSubmit={(e) => this.handleWeather(e)}>
-        {console.log(this.props.getWeather)}
-          <input type="text" name="city" placeholder="city"/>
-          <input type="text" nanem="country" placeholder="country"/>
-          <Button type="submit" variant="contained" color="primary">Get Your Weather</Button>
+        <form onSubmit={this.handleSubmit}>
+          <label>Name: </label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name?"
+            value={this.state.newUser.name}
+            onChange={this.handleChange}
+          />
+          <label>Email: </label>
+          <input
+            type="text"
+            name="email"
+            placeholder="Email?"
+            value={this.state.newUser.email}
+            onChange={this.handleChange}
+          />
+          <label>Favorite City: </label>
+          <input
+            type="text"
+            name="city"
+            placeholder="Favorite City?"
+            value={this.state.newUser.favCity}
+            onChange={this.handleChange}
+          />
+
+          <Button
+            type="submit"
+            value="Submit"
+            variant="contained"
+            color="primary"
+          >
+            Update User
+          </Button>
         </form>
         
         <Button onClick={this.handleDelete} variant="contained" color="primary">
