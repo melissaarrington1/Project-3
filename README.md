@@ -1,6 +1,6 @@
 # Project-3
 
-##About this App
+## About this App
 
 This is a weather app that was build using the React MERN Stack. 
 
