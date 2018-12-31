@@ -1,5 +1,7 @@
 # Project-3
 
+##About this App
+
 This is a weather app that was build using the React MERN Stack. 
 
 A user is able to create an account, and then see the local forecast for their favorite city.
