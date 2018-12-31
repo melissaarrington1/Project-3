@@ -6,11 +6,15 @@ This is a weather app that was build using the React MERN Stack.
 
 A user is able to create an account, select their favorite city, and view the current information for that city.
 
+This app is also social as well! When logged in, you can see a list of all users that are currently using the weather app.
+
 ## User Stories
 
 When a user arrives at the homepage, they are prompted to enter. They are then brought to a page where they can create a new account. 
 
-When a user creates an account, they are brought to their 
+When a user creates an account, they are brought to their personalized page, where they can see their information, update their account, and even delete their account.
+
+When a user is creating their account, they can also see a list of all users that are currently using the weather app.
 
 ## Technologies Used: 
 React
