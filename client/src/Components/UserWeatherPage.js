@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import UserPage from "../Components/UserPage";
 import City from "./City";
 import styled from 'styled-components';
 import Navigation from '../Components/Navigation'
