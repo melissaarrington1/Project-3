@@ -36,6 +36,8 @@ https://wireframe.cc/186g6d
 ## Link to Trello: 
 https://trello.com/b/pE4ipiCz/your-weather-app
 
+![Trello](client/public/Images/trello.png)
+
 ## Link to Heroku: 
 https://springer937-project-3.herokuapp.com/
 
