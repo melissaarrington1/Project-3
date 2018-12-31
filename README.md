@@ -6,6 +6,20 @@ This is a weather app that was build using the React MERN Stack.
 
 A user is able to create an account, select their favorite city, and view the current information for that city.
 
+## User Stories
+
+When a user arrives at the homepage, they are prompted to enter. They are then brought to a page where they can create a new account. 
+
+When a user creates an account, they are brought to their 
+
+## Technologies Used: 
+React
+Express
+MongoDB
+Node.js
+Material UI React
+Axios
+
 ## Future Goals
 
 A stretch goal is to be able to incorporate use of an API to pull in current weather data from any city in the world. I would also like to add the capability for a user to be able to add and save multiple cities.
